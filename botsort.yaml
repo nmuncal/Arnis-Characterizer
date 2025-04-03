@@ -1,0 +1,17 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# Default YOLO tracker settings for BoT-SORT tracker https://github.com/NirAharon/BoT-SORT
+
+tracker_type: botsort  # tracker type, ['botsort', 'bytetrack']
+track_high_thresh: 0.3  # increased for more stable initial tracking
+track_low_thresh: 0.15  # kept same for second association
+new_track_thresh: 0.8  # increased to prevent frequent new track creation
+track_buffer: 60  # increased buffer for longer track memory
+match_thresh: 0.6  # lowered for more lenient matching
+fuse_score: True  # keep fusion of confidence scores
+min_box_area: 100  # added to filter out small detections
+
+# BoT-SORT settings
+gmc_method: sparseOptFlow  # best for pose tracking with potential camera movement
+proximity_thresh: 0.6  # increased for better spatial association
+appearance_thresh: 0.35  # increased for stronger appearance matching
+with_reid: True  # enabled ReID for better identity preservation
